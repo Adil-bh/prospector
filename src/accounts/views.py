@@ -2,8 +2,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from prospector_app.forms import CustomSignupForm
-from prospector_app.models import CustomUser
+from accounts.forms import CustomSignupForm
+from accounts.models import CustomUser
 
 
 # Create your views here.

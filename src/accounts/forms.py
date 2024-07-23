@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 
-from prospector_app.models import CustomUser
+from accounts.models import CustomUser
 
 
 class CustomSignupForm(UserCreationForm):

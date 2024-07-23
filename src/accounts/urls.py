@@ -1,7 +1,7 @@
 from django.urls import path, include
-from prospector_app.views import home, signup
+from accounts.views import home, signup
 import django.contrib.auth.urls
-app_name = "prospector"
+app_name = "accounts"
 
 urlpatterns = [
     path("", home, name="home"),

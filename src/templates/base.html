@@ -10,20 +10,20 @@
 <nav>
     <ul>
         <li>
-            <a href="{% url 'prospector:home' %}">Accueil</a>
+            <a href="{% url 'accounts:home' %}">Accueil</a>
         </li>
         {% if not request.user.is_authenticated %}
             <li>
-                <a href="{% url 'prospector:login' %}">Connexion</a>
+                <a href="{% url 'accounts:login' %}">Connexion</a>
             </li>
             <li>
-                <a href="{% url 'prospector:signup' %}">Inscription</a>
+                <a href="{% url 'accounts:signup' %}">Inscription</a>
             </li>
         {% endif %}
 
         {% if request.user.is_authenticated %}
             <li>
-                <a href="{% url 'prospector:logout' %}">Déconnexion</a>
+                <a href="{% url 'accounts:logout' %}">Déconnexion</a>
             </li>
        {% endif %}
     </ul>

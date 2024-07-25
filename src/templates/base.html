@@ -6,6 +6,7 @@
         <title>Prospector</title>
     {% endblock %}
 </head>
+
 <body>
 <nav>
     <ul>
@@ -28,6 +29,18 @@
        {% endif %}
     </ul>
 </nav>
+
+{% for message in messages %}
+{% if message.tags == 'error' %}
+    <div class="" role="alert">
+        {{ message }}
+    </div>
+    {% elif message.tags == 'success' %}
+    <div class="" role="alert">
+        {{ message }}
+    </div>
+    {% endif %}
+{% endfor %}
 <section id="prospector">
     {% block content %}
     {% endblock %}

@@ -1,4 +1,5 @@
 from django.contrib.auth.base_user import BaseUserManager
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -10,10 +11,14 @@ def user_directory_path(instance, filename):
 
 
 class CustomUser(AbstractUser):
+    email = models.EmailField(_("email address"), unique=True, blank=True)
     curriculum_vitae = models.FileField(_("resume"), upload_to=user_directory_path)
     linkedin_link = models.URLField(_("linkedin link"), max_length=200)
     prospection_email = models.EmailField(_("email address for prospection"), blank=True)
     prospection_password = models.CharField(_("prospection password"), max_length=128, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('accounts:home')
 
 
 class Leads(models.Model):

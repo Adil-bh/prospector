@@ -13,6 +13,8 @@
     {{ form.as_p }}
 
     <input type="submit" value="Connexion">
+    <p>Pas encore de compte ? <a href="{% url 'accounts:signup' %}">Inscrivez-vous</a></p>
+    <p><a href="{% url 'accounts:reset_password' %}">Mot de passe oublié ?</a></p>
 </form>
 
 {% endblock %}

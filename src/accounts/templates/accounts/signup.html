@@ -16,6 +16,8 @@
     {% endfor %}
 
     <input type="submit" value="S'inscrire">
+
+    <p>Déjà un compte ? <a href="{% url 'accounts:login' %}">Connectez-vous</a></p>
 </form>
 
 {% endblock %}
